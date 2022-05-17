@@ -41,7 +41,7 @@
         "./src/assets/*"
       ],
       "@components/*": [
-        "./src/components/*"
+        "src/components/*"
       ],
       "@contexts/*": [
         "./src/contexts/*"
