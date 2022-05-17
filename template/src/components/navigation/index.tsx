@@ -1,11 +1,14 @@
 import React from "react";
-import { View } from "react-native";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { ParamListBase } from "@react-navigation/native";
 
+import Home from "@views/Home/Home";
+import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
+import { TabParamList } from "./TabNavigator/TabNavigator";
+
 export interface AppStackParamList extends ParamListBase {
-	Home: undefined;
+	Tab: BottomTabScreenProps<TabParamList, "Home">;
 }
 
 const AppStack = createNativeStackNavigator<AppStackParamList>();
@@ -13,10 +16,8 @@ export default function AppStackNavigator() {
 	return (
 		<AppStack.Navigator
 			initialRouteName="Home"
-			screenOptions={{ headerShown: false }}>
-			<AppStack.Screen
-				name="Public"
-				component={() => <View />}></AppStack.Screen>
+			screenOptions={{ headerShown: true }}>
+			<AppStack.Screen name="Home" component={Home} />
 		</AppStack.Navigator>
 	);
 }

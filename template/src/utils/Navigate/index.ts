@@ -1,5 +1,5 @@
 import { createNavigationContainerRef } from "@react-navigation/native";
-import { AppStackParamList } from "@components/routing";
+import { AppStackParamList } from "@components/navigation";
 
 export const navigationRef = createNavigationContainerRef<AppStackParamList>();
 

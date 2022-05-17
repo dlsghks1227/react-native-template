@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
-import * as Navigation from "@utils/navigate/Navigate";
+import * as Navigation from "@utils/Navigate";
 
 type Props = {
-	element: JSX.Element;
+	children: JSX.Element;
 };
 
-export default function PrivateRoute({ element }: Props) {
+export default function PrivateRoute({ children }: Props) {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [loading, setLoading] = useState(true);
 
@@ -22,5 +22,5 @@ export default function PrivateRoute({ element }: Props) {
 		Navigation.navigate("pubilc", { screen: "home" });
 	}
 
-	return element;
+	return children;
 }
