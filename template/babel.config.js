@@ -1,6 +1,7 @@
 module.exports = {
 	presets: ["module:metro-react-native-babel-preset"],
 	plugins: [
+		["babel-plugin-styled-components"],
 		[
 			"module-resolver",
 			{
@@ -22,6 +23,7 @@ module.exports = {
 					"@contexts": "./src/contexts",
 					"@services": "./src/services",
 					"@store": "./src/store",
+					"@styles": "./src/styles",
 					"@theme": "./src/theme",
 					"@utils": "./src/utils",
 					"@views": "./src/views",

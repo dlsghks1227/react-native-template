@@ -1,5 +1,8 @@
 import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import {
+	BottomTabNavigationOptions,
+	createBottomTabNavigator,
+} from "@react-navigation/bottom-tabs";
 import { ParamListBase } from "@react-navigation/native";
 
 import Home from "@views/Home/Home";
@@ -8,13 +11,15 @@ export interface TabParamList extends ParamListBase {
 	Home: undefined;
 }
 
-const HomeTab = createBottomTabNavigator<TabParamList>();
+const Tap = createBottomTabNavigator<TabParamList>();
 export default function TabNavigator() {
+	const option: BottomTabNavigationOptions = {
+		headerShown: false,
+	};
+	
 	return (
-		<HomeTab.Navigator
-			initialRouteName="Home"
-			screenOptions={{ headerShown: true }}>
-			<HomeTab.Screen name="Home" component={Home} />
-		</HomeTab.Navigator>
+		<Tap.Navigator initialRouteName="Home" screenOptions={option}>
+			<Tap.Screen name="Home" component={Home} />
+		</Tap.Navigator>
 	);
 }

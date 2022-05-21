@@ -3,21 +3,22 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { ParamListBase } from "@react-navigation/native";
 
-import Home from "@views/Home/Home";
-import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
-import { TabParamList } from "./TabNavigator/TabNavigator";
+import TabNavigator from "./TabNavigator/TabNavigator";
+import AuthNavigator from "./AuthNavigator/AuthNaviagtor";
 
 export interface AppStackParamList extends ParamListBase {
-	Tab: BottomTabScreenProps<TabParamList, "Home">;
+	Tab: undefined;
+	Auth: undefined;
 }
 
 const AppStack = createNativeStackNavigator<AppStackParamList>();
 export default function AppStackNavigator() {
 	return (
 		<AppStack.Navigator
-			initialRouteName="Home"
-			screenOptions={{ headerShown: true }}>
-			<AppStack.Screen name="Home" component={Home} />
+			initialRouteName="Auth"
+			screenOptions={{ headerShown: false }}>
+			<AppStack.Screen name="Tab" component={TabNavigator} />
+			<AppStack.Screen name="Auth" component={AuthNavigator} />
 		</AppStack.Navigator>
 	);
 }
