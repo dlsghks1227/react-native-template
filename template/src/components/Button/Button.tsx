@@ -1,19 +1,13 @@
 import React from "react";
-import { GestureResponderEvent } from "react-native";
+import { TouchableOpacityProps } from "react-native";
+import { UI } from "src/@types/UI";
 import { ButtonContainer, TextWrapper } from "./Button.styles";
 
-interface Props {
-	title: string;
-	onPress?: (event: GestureResponderEvent) => void;
-	color?: "primary" | "secondary";
-}
+type Props = { title: string } & UI & TouchableOpacityProps;
 
-export default function Button({ title, onPress, color = "primary" }: Props) {
+export default function Button({ title, color = "primary", ...props }: Props) {
 	return (
-		<ButtonContainer
-			activeOpacity={0.6}
-			color={color}
-			onPress={onPress}>
+		<ButtonContainer activeOpacity={1} color={color} {...props}>
 			<TextWrapper>{title}</TextWrapper>
 		</ButtonContainer>
 	);

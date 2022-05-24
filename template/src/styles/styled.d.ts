@@ -17,6 +17,12 @@ declare module "styled-components" {
 		palette: {
 			primary: IPalette;
 			secondary: IPalette;
+			info: IPalette;
+			success: IPalette;
+			warning: IPalette;
+			error: IPalette;
+
+			disabledOpacity: number;
 		};
 	}
 }
