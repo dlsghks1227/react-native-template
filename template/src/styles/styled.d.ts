@@ -13,7 +13,16 @@ declare module "styled-components" {
 	export interface DefaultTheme {
 		shape: {
 			borderRadius: string;
-		}
+		};
+		fontSizes: {
+			title: number;
+			subtitle: number;
+			paragraph: number;
+		};
+		colors: {
+			black: string;
+			white: string;
+		};
 		palette: {
 			primary: IPalette;
 			secondary: IPalette;

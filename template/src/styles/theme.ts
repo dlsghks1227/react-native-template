@@ -4,6 +4,15 @@ const theme: DefaultTheme = {
 	shape: {
 		borderRadius: "8px",
 	},
+	fontSizes: {
+		title: 60,
+		subtitle: 30,
+		paragraph: 10,
+	},
+	colors: {
+		black: "#000000",
+		white: "#ffffff",
+	},
 	palette: {
 		primary: {
 			main: "#64b5f6",

@@ -5,7 +5,8 @@ import {
 } from "@react-navigation/bottom-tabs";
 import { ParamListBase } from "@react-navigation/native";
 
-import Home from "@views/Home/Home";
+import Home from "@views/home/Home";
+import { ROUTE_COMMON_HOME } from "@utils/constants/string.constants";
 
 export interface TabParamList extends ParamListBase {
 	Home: undefined;
@@ -18,8 +19,10 @@ export default function TabNavigator() {
 	};
 	
 	return (
-		<Tap.Navigator initialRouteName="Home" screenOptions={option}>
-			<Tap.Screen name="Home" component={Home} />
+		<Tap.Navigator
+			initialRouteName={ROUTE_COMMON_HOME}
+			screenOptions={{ headerShown: false }}>
+			<Tap.Screen name={ROUTE_COMMON_HOME} component={Home} />
 		</Tap.Navigator>
 	);
 }
